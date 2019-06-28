@@ -1,2 +1,2 @@
 # graphql-scalar
-GraphQL Scalars (string, number) with sanitization / validation / transformation in TypeScript.
+GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.
