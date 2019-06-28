@@ -2,10 +2,10 @@
 Configurable custom GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.
 
 [![npm version](https://badge.fury.io/js/graphql-scalar.svg)](https://badge.fury.io/js/graphql-scalar)
-![npm type definitions](https://img.shields.io/npm/types/graphql-scalar.svg)
 [![Build Status](https://travis-ci.org/joonhocho/graphql-scalar.svg?branch=master)](https://travis-ci.org/joonhocho/graphql-scalar)
 [![Coverage Status](https://coveralls.io/repos/github/joonhocho/graphql-scalar/badge.svg?branch=master)](https://coveralls.io/github/joonhocho/graphql-scalar?branch=master)
 [![Dependency Status](https://david-dm.org/joonhocho/graphql-scalar.svg)](https://david-dm.org/joonhocho/graphql-scalar)
+![npm type definitions](https://img.shields.io/npm/types/graphql-scalar.svg)
 [![GitHub](https://img.shields.io/github/license/joonhocho/graphql-scalar.svg)](https://github.com/joonhocho/graphql-scalar/blob/master/LICENSE)
 
 TypeScript version (with breaking changes) of the following repos:  
