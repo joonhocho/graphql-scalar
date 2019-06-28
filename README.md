@@ -19,11 +19,44 @@ yarn add graphql-scalar
 
 ## How to Use
 ```typescript
-import { Nullable, NonNull } from 'graphql-scalar';
+import { createStringScalar, createIntScalar, createFloatScalar } from 'graphql-scalar';
 
-const nullableString: Nullable<string> = null; // ok
+const stringScalar = createStringScalar({
+  name: string;
+  description?: string;
+  capitalize?: 'characters' | 'words' | 'sentences' | 'first';
+  collapseWhitespace?: boolean;
+  lowercase?: boolean;
+  maxLength?: number;
+  minLength?: number;
+  nonEmpty?: boolean;
+  pattern?: RegExp | string;
+  singleline?: string;
+  trim?: boolean;
+  trimLeft?: boolean;
+  trimRight?: boolean;
+  truncate?: number;
+  uppercase?: boolean;
+  coerce?: ScalarCoerceFunction<TValue>;
+  errorHandler?: ScalarParseErrorHandler<TInternal, TConfig, TErrorCode>;
+  parse?: ScalarParseFunction<TValue, TInternal>;
+  sanitize?: ScalarSanitizeFunction<TValue>;
+  serialize?: ScalarSerializeFunction<TInternal, TExternal>;
+  validate?: ScalarValidateFunction<TValue>;
+})
 
-const nonNullString: NonNull<string | null> = null; // error
+const intScalar = createIntScalar({
+  name: string;
+  description?: string;
+  maximum?: number;
+  minimum?: number;
+  coerce?: ScalarCoerceFunction<TValue>;
+  errorHandler?: ScalarParseErrorHandler<TInternal, TConfig, TErrorCode>;
+  parse?: ScalarParseFunction<TValue, TInternal>;
+  sanitize?: ScalarSanitizeFunction<TValue>;
+  serialize?: ScalarSerializeFunction<TInternal, TExternal>;
+  validate?: ScalarValidateFunction<TValue>;
+})
 ```
 
 ## License
