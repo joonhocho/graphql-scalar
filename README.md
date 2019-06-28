@@ -8,6 +8,10 @@ Configurable custom GraphQL Scalars (string, number, date, etc) with sanitizatio
 [![Dependency Status](https://david-dm.org/joonhocho/graphql-scalar.svg)](https://david-dm.org/joonhocho/graphql-scalar)
 [![GitHub](https://img.shields.io/github/license/joonhocho/graphql-scalar.svg)](https://github.com/joonhocho/graphql-scalar/blob/master/LICENSE)
 
+TypeScript version (with breaking changes) of the following repos:  
+[joonhocho/graphql-input-number](https://github.com/joonhocho/graphql-input-number)  
+[joonhocho/graphql-input-string](https://github.com/joonhocho/graphql-input-string)  
+
 ## Get Started
 ```
 npm install graphql-scalar
