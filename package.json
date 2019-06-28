@@ -49,6 +49,9 @@
     "url": "https://github.com/joonhocho/graphql-scalar/issues"
   },
   "homepage": "https://github.com/joonhocho/graphql-scalar#readme",
+  "peerDependencies": {
+    "graphql": "*"
+  },
   "devDependencies": {
     "@types/graphql": "^14.2.2",
     "@types/jest": "^24.0.15",
