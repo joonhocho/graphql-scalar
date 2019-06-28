@@ -1,0 +1,69 @@
+{
+  "name": "graphql-scalar",
+  "version": "0.0.1",
+  "description": "Configurable custom GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.",
+  "keywords": [
+    "configurable",
+    "custom",
+    "GraphQL",
+    "scalars",
+    "GraphQLScalarType",
+    "string",
+    "number",
+    "date",
+    "timestamp",
+    "sanitization",
+    "validation",
+    "transformation",
+    "TypeScript",
+    "graphql-input-number",
+    "graphql-input-string"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "all": "npm run clean && npm run format && npm run lint:fix && npm run test && npm run build && npm run build:es5",
+    "build": "tsc -p ./tsconfig.json && tscpaths -p ./tsconfig.json -s ./src -o ./lib",
+    "build:es5": "tsc -p ./tsconfig.es5.json && tscpaths -p ./tsconfig.es5.json -s ./src -o ./es5",
+    "clean": "rm -rf ./lib ./es5 ./es6 ./coverage",
+    "format": "prettier --write \"./*.{js,jsx,ts,tsx}\" \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "tslint -c ./tslint.json \"src/**/*\"",
+    "lint:fix": "tslint --fix -c ./tslint.json \"src/**/*\"",
+    "precommit": "npm run all",
+    "prepublish": "npm run all",
+    "reinstall": "rm -rf ./node_modules ./package-lock.json ./yarn.lock && npm i",
+    "start": "npm run test",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coverage:report": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test:watch": "jest --watch"
+  },
+  "pre-commit": "precommit",
+  "author": "Joon Ho Cho",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonhocho/graphql-scalar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joonhocho/graphql-scalar/issues"
+  },
+  "homepage": "https://github.com/joonhocho/graphql-scalar#readme",
+  "devDependencies": {
+    "@types/graphql": "^14.2.2",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "coveralls": "^3.0.4",
+    "graphql": "^14.4.0",
+    "jest": "^24.8.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tscpaths": "^0.0.9",
+    "tsdef": "^0.0.9",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  }
+}
