@@ -1,6 +1,6 @@
 {
   "name": "graphql-scalar",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Configurable custom GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.",
   "keywords": [
     "configurable",
@@ -19,10 +19,21 @@
     "graphql-input-number",
     "graphql-input-string"
   ],
+  "author": "Joon Ho Cho",
+  "license": "MIT",
+  "homepage": "https://github.com/joonhocho/graphql-scalar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonhocho/graphql-scalar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joonhocho/graphql-scalar/issues"
+  },
   "module": "lib/index.js",
   "main": "dist/node/index.js",
   "browser": "dist/browser/index.js",
   "types": "lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "all": "npm run clean && npm run format && npm run lint:fix && npm run build:all && npm run test",
     "build:all": "npm run build:module && npm run build:node && npm run build:browser",
@@ -43,16 +54,10 @@
     "test:watch": "jest --watch"
   },
   "pre-commit": "precommit",
-  "author": "Joon Ho Cho",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joonhocho/graphql-scalar.git"
+  "peerDependencies": {
+    "graphql": "*",
+    "tslib": "^1.10.0"
   },
-  "bugs": {
-    "url": "https://github.com/joonhocho/graphql-scalar/issues"
-  },
-  "homepage": "https://github.com/joonhocho/graphql-scalar#readme",
   "devDependencies": {
     "@types/graphql": "^14.2.2",
     "@types/jest": "^24.0.15",
@@ -64,18 +69,13 @@
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "tscpaths": "^0.0.9",
-    "tsdef": "^0.0.9",
+    "tsdef": "^0.0.13",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3"
   },
-  "peerDependencies": {
-    "graphql": "*",
-    "tslib": "^1.10.0"
-  },
   "engines": {
     "node": ">=8.0.0"
-  },
-  "sideEffects": false
+  }
 }
