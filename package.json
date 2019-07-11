@@ -1,6 +1,6 @@
 {
   "name": "graphql-scalar",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Configurable custom GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.",
   "keywords": [
     "configurable",
@@ -76,5 +76,6 @@
   },
   "engines": {
     "node": ">=8.0.0"
-  }
+  },
+  "sideEffects": false
 }
