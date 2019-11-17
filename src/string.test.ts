@@ -319,6 +319,20 @@ describe('GraphQLString', () => {
     await assertEqual(schema, value, value);
   });
 
+  it('maxEmptyLines', async () => {
+    const schema = getSchema({
+      name: 'string',
+      trim: true,
+      collapseWhitespace: true,
+      maxEmptyLines: 1,
+    });
+
+    const value =
+      '\n\n  a \t\n  \n   \n   \n   b  \n c\r\n\r\nd\r\n\n\ne\r\r\r\rf   \n\n';
+
+    await assertEqual(schema, value, 'a\n\nb\nc\n\nd\n\ne\n\nf');
+  });
+
   it('minLength bad', async () => {
     const schema = getSchema({
       name: 'string',

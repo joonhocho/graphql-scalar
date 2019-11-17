@@ -26,6 +26,7 @@ export interface IStringScalarConfig<TInternal = string, TExternal = string>
   capitalize?: 'characters' | 'words' | 'sentences' | 'first';
   collapseWhitespace?: boolean;
   lowercase?: boolean;
+  maxEmptyLines?: number;
   maxLength?: number;
   minLength?: number;
   nonEmpty?: boolean;
@@ -48,9 +49,14 @@ const newlineRegex = /[\r\n]+/g;
 
 const newlineWithWSRegex = /\s*[\r\n]+\s*/g;
 
+const linebreakRegex = /\r\n|\r|\n/g;
+
 const whitespace = /\s+/g;
 
 const collapseWS = (str: string): string => str.replace(whitespace, ' ');
+
+const trimAndCollapseWS = (str: string): string =>
+  str.trim().replace(whitespace, ' ');
 
 export const createStringScalar = <TInternal = string, TExternal = string>(
   config: IStringScalarConfig<TInternal, TExternal>
@@ -61,6 +67,7 @@ export const createStringScalar = <TInternal = string, TExternal = string>(
     collapseWhitespace,
     errorHandler,
     lowercase,
+    maxEmptyLines,
     maxLength,
     minLength,
     nonEmpty,
@@ -81,6 +88,13 @@ export const createStringScalar = <TInternal = string, TExternal = string>(
   const regex = typeof pattern === 'string' ? new RegExp(pattern) : pattern;
 
   const handleError = errorHandler || defaultErrorHandler;
+
+  let emptyLineRegex: RegExp | null = null;
+  let emptyLineString: string | null = null;
+  if (maxEmptyLines) {
+    emptyLineRegex = new RegExp(`\n{${maxEmptyLines + 2},}`, 'g');
+    emptyLineString = '\n'.repeat(maxEmptyLines + 1);
+  }
 
   const parseValue = (
     unknownValue: unknown,
@@ -137,6 +151,12 @@ export const createStringScalar = <TInternal = string, TExternal = string>(
           if (singleline) {
             // newlines replaced already
             value = value.replace(whitespace, ' ');
+          } else if (maxEmptyLines) {
+            value = value
+              .split(linebreakRegex)
+              .map(trimAndCollapseWS)
+              .join('\n')
+              .replace(emptyLineRegex!, emptyLineString!);
           } else {
             value = value
               .split(newlineWithWSRegex)
