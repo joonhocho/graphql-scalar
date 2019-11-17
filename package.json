@@ -1,6 +1,6 @@
 {
   "name": "graphql-scalar",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Configurable custom GraphQL Scalars (string, number, date, etc) with sanitization / validation / transformation in TypeScript.",
   "keywords": [
     "configurable",
@@ -60,20 +60,20 @@
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
-    "@types/jest": "^24.0.20",
-    "@types/node": "^12.11.7",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
     "coveralls": "^3.0.7",
     "graphql": "^14.5.8",
     "jest": "^24.9.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
     "tscpaths": "^0.0.9",
     "tsdef": "^0.0.13",
-    "tslint": "^5.20.0",
+    "tslint": "^5.20.1",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "engines": {
     "node": ">=8.0.0"
