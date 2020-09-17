@@ -54,6 +54,9 @@
     "test:watch": "jest --watch"
   },
   "pre-commit": "precommit",
+  "dependencies": {
+    "tsdef": "^0.0.14"
+  },
   "peerDependencies": {
     "graphql": "*",
     "tslib": "^1.10.0"
@@ -69,7 +72,6 @@
     "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
     "tscpaths": "^0.0.9",
-    "tsdef": "^0.0.13",
     "tslint": "^5.20.1",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
