@@ -34,8 +34,7 @@ export interface IScalarConfig<
   TValue,
   TInternal,
   TExternal
->
-  extends ExcludeKeys<
+> extends ExcludeKeys<
     GraphQLScalarTypeConfig<TInternal, TExternal>,
     'serialize' | 'parseValue' | 'parseLiteral'
   > {

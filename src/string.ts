@@ -158,10 +158,7 @@ export const createStringScalar = <TInternal = string, TExternal = string>(
               .join('\n')
               .replace(emptyLineRegex!, emptyLineString!);
           } else {
-            value = value
-              .split(newlineWithWSRegex)
-              .map(collapseWS)
-              .join('\n');
+            value = value.split(newlineWithWSRegex).map(collapseWS).join('\n');
           }
         }
 
